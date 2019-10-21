@@ -6,7 +6,6 @@ const users = require("./routes/api/users");
 const journals = require("./routes/api/journals");
 const cors = require("cors");
 const fs = require("fs");
-const http = require("http");
 const https = require("https");
 
 const app = express();
@@ -36,18 +35,13 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/journals", journals);
 
-const mongo_port = 5000;
+const port = 5000;
 
-app.listen(mongo_port, () => {
-  console.log("db server running");
-});
-
-// http and https servers
-
-if (process.env.NODE_ENV === "production") {
-  const http_port = 80;
-  const https_port = 443;
-
+if (process.env.NODE_ENV !== "production") {
+  app.listen(port, () => {
+    console.log("db server running");
+  });
+} else {
   // Certificate
   const privateKey = fs.readFileSync(
     "/etc/letsencrypt/live/hugary.dev/privkey.pem",
@@ -69,14 +63,9 @@ if (process.env.NODE_ENV === "production") {
   };
 
   // Starting servers
-  const httpServer = http.createServer(app);
   const httpsServer = https.createServer(credentials, app);
 
-  httpServer.listen(http_port, () => {
-    console.log("HTTP server running");
-  });
-
-  httpsServer.listen(https_port, () => {
+  httpsServer.listen(port, () => {
     console.log("HTTPS server running");
   });
 }
