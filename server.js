@@ -35,20 +35,47 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/journals", journals);
 
-const port = process.env.PORT || 5000;
+const mongo_port = 5000;
 
-if (process.env.NODE_ENV === "production")
-  https
-    .createServer(
-      {
-        key: fs.readFileSync("/etc/letsencrypt/live/hugary.dev/privkey.pem"),
-        cert: fs.readFileSync("/etc/letsencrypt/live/hugary.dev/fullchain.pem")
-      },
-      app
-    )
-    .listen(port, () => console.log(`Server up and running on port ${port} !`));
-else {
-  app.listen(port, () =>
-    console.log(`Server up and running on port ${port} !`)
+app.listen(mongo_port, () => {
+  console.log("db server running");
+});
+
+// http and https servers
+
+if (process.env.NODE_ENV === "production") {
+  const http_port = 80;
+  const https_port = 443;
+
+  // Certificate
+  const privateKey = fs.readFileSync(
+    "/etc/letsencrypt/live/hugary.dev/privkey.pem",
+    "utf8"
   );
+  const certificate = fs.readFileSync(
+    "/etc/letsencrypt/live/hugary.dev/cert.pem",
+    "utf8"
+  );
+  const ca = fs.readFileSync(
+    "/etc/letsencrypt/live/hugary.dev/chain.pem",
+    "utf8"
+  );
+
+  const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+  };
+
+  // Starting servers
+  const httpServer = http.createServer(app);
+  const httpsServer = https.createServer(credentials, app);
+
+  httpServer.listen(http_port, () => {
+    console.log("HTTP server running");
+  });
+
+  httpsServer.listen(https_port, () => {
+    console.log("HTTPS server running");
+  });
 }
