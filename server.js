@@ -5,6 +5,8 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const journals = require("./routes/api/journals");
 const cors = require("cors");
+const fs = require("fs");
+const https = require("https");
 
 const app = express();
 app.use(cors());
@@ -34,4 +36,19 @@ app.use("/api/users", users);
 app.use("/api/journals", journals);
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+
+if (process.env.NODE_ENV === "production")
+  https
+    .createServer(
+      {
+        key: fs.readFileSync("/etc/letsencrypt/live/hugary.dev/privkey.pem"),
+        cert: fs.readFileSync("/etc/letsencrypt/live/hugary.dev/fullchain.pem")
+      },
+      app
+    )
+    .listen(port, () => console.log(`Server up and running on port ${port} !`));
+else {
+  app.listen(port, () =>
+    console.log(`Server up and running on port ${port} !`)
+  );
+}

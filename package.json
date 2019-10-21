@@ -9,7 +9,9 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "npm run build --prefix client",
+    "predeploy": "npm run build",
+    "deploy": "scp -r client/build/* ubuntu@3.132.91.40:public_html"
   },
   "author": "",
   "license": "ISC",
