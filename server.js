@@ -6,6 +6,7 @@ const users = require("./routes/api/users");
 const journals = require("./routes/api/journals");
 const cors = require("cors");
 const fs = require("fs");
+const http = require("http");
 const https = require("https");
 
 const app = express();
