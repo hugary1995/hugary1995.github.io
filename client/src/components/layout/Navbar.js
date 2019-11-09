@@ -3,6 +3,7 @@ import { Link, withRouter, matchPath } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser, logoutUser } from "../../actions/authActions";
+import { Navbar as MatNavbar, NavItem, Icon } from "react-materialize";
 
 function Greeting(props) {
   const isRegisterOrLogin =
@@ -45,26 +46,45 @@ class Navbar extends Component {
   onLogout = e => {
     e.preventDefault();
     this.props.logoutUser();
-    // this.props.history.push("/");
   };
 
   render() {
     return (
-      <div className="row">
-        <div
-          className="col s12 blue darken-4 waves-effect center-align"
-          style={{ paddingBottom: "10px" }}
+      <div>
+        <MatNavbar
+          brand={
+            <Link to="/" className="right" style={{ marginRight: "30px" }}>
+              {"< / >"} hugary.dev
+            </Link>
+          }
+          alignLinks="left"
+          className="blue darken-4"
         >
-          <Link
-            className="white-text"
-            to="/"
-            style={{
-              fontFamily: "monospace"
-            }}
-          >
-            <h4>{"</>"} hugary.dev</h4>
-          </Link>
-        </div>
+          <NavItem href="/">
+            About me
+            <Icon left>perm_identity</Icon>
+          </NavItem>
+          <NavItem href="/">
+            Skills
+            <Icon left>build</Icon>
+          </NavItem>
+          <NavItem href="/">
+            Experience
+            <Icon left>perm_identity</Icon>
+          </NavItem>
+          <NavItem href="/">
+            Projects
+            <Icon left>perm_identity</Icon>
+          </NavItem>
+          <NavItem href="/">
+            Publications
+            <Icon left>perm_identity</Icon>
+          </NavItem>
+          <NavItem href="/">
+            Apps
+            <Icon left>perm_identity</Icon>
+          </NavItem>
+        </MatNavbar>
         <div
           className="col s12 right-align flow-text"
           style={{ paddingBottom: "10px", paddingTop: "10px" }}
