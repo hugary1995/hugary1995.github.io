@@ -3,7 +3,12 @@ import { Link, withRouter, matchPath } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser, logoutUser } from "../../actions/authActions";
-import { Navbar as MatNavbar, NavItem, Icon } from "react-materialize";
+import {
+  Navbar as MatNavbar,
+  NavItem,
+  SideNavItem,
+  Icon
+} from "react-materialize";
 
 function Greeting(props) {
   const isRegisterOrLogin =
@@ -48,41 +53,71 @@ class Navbar extends Component {
     this.props.logoutUser();
   };
 
+  customSideNav() {
+    return (
+      <div>
+        <li>
+          <img
+            src="header.jpeg"
+            style={{ maxWidth: "100%", display: "inline-block" }}
+            alt=""
+          />
+        </li>
+        <SideNavItem href="/aboutme">
+          ABOUT ME
+          <Icon left>perm_identity</Icon>
+        </SideNavItem>
+        <SideNavItem href="/skills">
+          SKILLS
+          <Icon left>build</Icon>
+        </SideNavItem>
+        <SideNavItem href="/profdevel">
+          PROF. DEVEL.
+          <Icon left>school</Icon>
+        </SideNavItem>
+        <SideNavItem href="/">
+          APP GALLERY
+          <Icon left>casino</Icon>
+        </SideNavItem>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
         <MatNavbar
           brand={
             <Link to="/" className="right" style={{ marginRight: "30px" }}>
-              {"< / >"} hugary.dev
+              {"< >"} hugary.dev
             </Link>
           }
+          fixed
           alignLinks="left"
           className="blue darken-4"
+          menuIcon={
+            <div>
+              <b>MENU</b>
+              <Icon left>menu</Icon>
+            </div>
+          }
+          sidenav={this.customSideNav()}
         >
-          <NavItem href="/">
-            About me
+          <NavItem href="/aboutme">
+            ABOUT ME
             <Icon left>perm_identity</Icon>
           </NavItem>
-          <NavItem href="/">
-            Skills
+          <NavItem href="/skills">
+            SKILLS
             <Icon left>build</Icon>
           </NavItem>
-          <NavItem href="/">
-            Experience
-            <Icon left>perm_identity</Icon>
+          <NavItem href="/profdevel">
+            PROFESSIONAL DEVELOPMENT
+            <Icon left>school</Icon>
           </NavItem>
           <NavItem href="/">
-            Projects
-            <Icon left>perm_identity</Icon>
-          </NavItem>
-          <NavItem href="/">
-            Publications
-            <Icon left>perm_identity</Icon>
-          </NavItem>
-          <NavItem href="/">
-            Apps
-            <Icon left>perm_identity</Icon>
+            APP GALLERY
+            <Icon left>casino</Icon>
           </NavItem>
         </MatNavbar>
         <div

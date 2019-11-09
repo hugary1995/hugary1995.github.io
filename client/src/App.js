@@ -16,6 +16,10 @@ import Dashboard from "./components/dashboard/Dashboard";
 import JournalClub from "./components/apps/journal-club/JournalClub";
 import AddJournal from "./components/apps/journal-club/AddJournal";
 
+import AboutMe from "./components/about-me/AboutMe";
+import Skills from "./components/skills/Skills";
+import ProfDevel from "./components/prof-devel/ProfDevel";
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -42,6 +46,9 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/aboutme" component={AboutMe} />
+            <Route exact path="/skills" component={Skills} />
+            <Route exact path="/profdevel" component={ProfDevel} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/journalclub" component={JournalClub} />
