@@ -19,7 +19,7 @@ class AboutMe extends Component {
               src="headshot.jpg"
               style={{
                 width: "40%",
-                maxWidth: "300px",
+                maxWidth: "250px",
                 float: "left",
                 paddingRight: "15px",
                 paddingTop: "10px"

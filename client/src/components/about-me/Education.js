@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Collection, CollectionItem, Icon } from "react-materialize";
+import { Collection, CollectionItem } from "react-materialize";
 
 function School(props) {
   return (
@@ -24,9 +24,7 @@ class Education extends Component {
     return (
       <div>
         <blockquote>
-          <h5>
-            Education<Icon left>school</Icon>
-          </h5>
+          <h5>Education</h5>
         </blockquote>
         <Collection>
           <School

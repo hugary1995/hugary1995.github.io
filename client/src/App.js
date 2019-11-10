@@ -39,11 +39,30 @@ if (localStorage.jwtToken) {
   }
 }
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ height: window.innerHeight });
+  }
+
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App">
+          <div className="App" style={{ minHeight: this.state.height }}>
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/aboutme" component={AboutMe} />
