@@ -73,7 +73,7 @@ class Navbar extends Component {
         </SideNavItem>
         <SideNavItem href="/profdevel">
           PROF. DEVEL.
-          <Icon left>school</Icon>
+          <Icon left>work</Icon>
         </SideNavItem>
         <SideNavItem href="/">
           APP GALLERY
@@ -113,7 +113,7 @@ class Navbar extends Component {
           </NavItem>
           <NavItem href="/profdevel">
             PROFESSIONAL DEVELOPMENT
-            <Icon left>school</Icon>
+            <Icon left>work</Icon>
           </NavItem>
           <NavItem href="/">
             APP GALLERY

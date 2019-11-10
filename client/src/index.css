@@ -22,3 +22,7 @@ code {
   border-width: 2px;
   border-color: LightGray;
 }
+
+blockquote {
+  border-left: 5px solid #0d47a1;
+}
