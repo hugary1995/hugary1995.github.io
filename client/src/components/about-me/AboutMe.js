@@ -1,7 +1,45 @@
 import React, { Component } from "react";
-import { MediaBox } from "react-materialize";
+import { MediaBox, Collection, CollectionItem } from "react-materialize";
+
+function School(props) {
+  return (
+    <CollectionItem className="avatar">
+      <img src={props.imgsrc} alt="" className="circle" />
+      <p>
+        {props.name}
+        <br />
+        {props.degree}
+      </p>
+      <span className="secondary-content">{props.year}</span>
+    </CollectionItem>
+  );
+}
 
 class AboutMe extends Component {
+  education() {
+    return (
+      <div>
+        <blockquote>
+          <h4>Education</h4>
+        </blockquote>
+        <Collection>
+          <School
+            imgsrc="duke.png"
+            name="Pratt School of Engineering, Duke University"
+            degree="Ph.D in Computation Mechanics"
+            year="2017-now"
+          />
+          <School
+            imgsrc="wustl.png"
+            name="Mckelvey School of Engineering, Washington University in Saint Louis"
+            degree="B.S. in Mechanical Engineering"
+            year="2015-2017"
+          />
+        </Collection>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="container">
@@ -13,21 +51,28 @@ class AboutMe extends Component {
               maxWidth: "300px",
               float: "left",
               paddingRight: "15px",
-              paddingTop: "15px"
+              paddingTop: "10px"
             }}
             alt=""
           />
         </MediaBox>
         <p className="flow-text">
-          This is Tianchen (Gary) Hu&#8217;s website, and this is a bit of copy
-          about him. He grew up in Nanjing, China, where he graduated from
-          Nanjing Foreign Language School. He received his Bachelor of Science
-          in Mechanical Engineering with a second major in Computer Science from
-          Washington University in St. Louis. He is now a PhD student at Duke
-          University.  Gary&#8217;s research concerns nonlinear computational
-          models in solid mechanics. He is currently working on Phase-field
-          modeling of crack propagation
+          My name is Tianchen (Gary) Hu, and this is my personal website. This
+          website mainly serves as my online curriculum vitae, so you can learn
+          most of (the good things about) me here.
         </p>
+        <p className="flow-text">
+          I hold degrees in both Mechanical Engineering and Computer Science, so
+          my expertise largely resides in the field of computational mechanics,
+          including algorithm, data structures, and numerical methods.
+        </p>
+        <p className="flow-text">
+          Recently, I become interested in the full-stack side of things. Hence,
+          I am learning basics of front-end, back-end, database, and ways to
+          connect these pieces togather. I built this non-static site to test my
+          knowledge about the MERN (Mongo-Express-React-Node) stack.
+        </p>
+        {this.education()}
       </div>
     );
   }
