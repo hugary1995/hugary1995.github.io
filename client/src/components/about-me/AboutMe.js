@@ -10,8 +10,8 @@ class AboutMe extends Component {
         <div
           className="row"
           style={{
-            textAlign: "justify",
-            fontSize: "14pt"
+            fontSize: "12pt",
+            textAlign: "justify"
           }}
         >
           <MediaBox>
@@ -19,7 +19,7 @@ class AboutMe extends Component {
               src="headshot.jpg"
               style={{
                 width: "40%",
-                maxWidth: "250px",
+                maxWidth: "200px",
                 float: "left",
                 paddingRight: "15px",
                 paddingTop: "10px"
