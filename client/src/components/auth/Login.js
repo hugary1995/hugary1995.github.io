@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import isExternal from "is-url-external";
+
 class Login extends Component {
   constructor() {
     super();
@@ -13,6 +15,7 @@ class Login extends Component {
       errors: {}
     };
   }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/");
@@ -22,7 +25,9 @@ class Login extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.auth !== this.props.auth) {
       if (this.props.auth.isAuthenticated) {
-        this.props.history.goBack();
+        if (isExternal(prevProps.location.pathname))
+          this.props.history.push("/");
+        else this.props.history.goBack();
       }
     }
     if (prevProps.errors !== this.props.errors) {

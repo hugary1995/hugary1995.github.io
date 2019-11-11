@@ -3,7 +3,7 @@ import { Collection, CollectionItem } from "react-materialize";
 
 function School(props) {
   return (
-    <CollectionItem className="avatar">
+    <CollectionItem className="avatar" style={{ minHeight: "1em" }}>
       <a href={props.imglink} target="_blank" rel="noopener noreferrer">
         <img src={props.imgsrc} alt="" className="circle" />
       </a>
