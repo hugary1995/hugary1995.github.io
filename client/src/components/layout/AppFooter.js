@@ -4,8 +4,8 @@ import { Footer } from "react-materialize";
 function Contact(props) {
   return (
     <>
-      <div className="col s3 right-align">{props.name}:</div>
-      <div className="col s9">
+      <div className="col s4 right-align">{props.name}:</div>
+      <div className="col s8">
         <a
           href={props.link}
           target="_blank"
@@ -28,7 +28,7 @@ class AppFooter extends Component {
         style={{ minHeight: "1em", marginTop: "2em" }}
       >
         <div className="row">
-          <div className="col s3">
+          <div className="col s4">
             <h5 className="white-text right-align">Contact&nbsp;me</h5>
           </div>
         </div>
