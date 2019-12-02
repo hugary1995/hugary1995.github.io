@@ -169,7 +169,7 @@ class JournalClub extends Component {
     if (user && user.journals.length > 0)
       return (
         <Collapsible accordion={false}>
-          <CollapsibleItem header={<h5>{user.nickname}</h5>} expanded>
+          <CollapsibleItem header={<h5>{user.nickname}</h5>}>
             {this.renderJournals(user)}
           </CollapsibleItem>
         </Collapsible>

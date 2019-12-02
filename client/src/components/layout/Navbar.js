@@ -89,7 +89,7 @@ class Navbar extends Component {
         <MatNavbar
           brand={
             <Link to="/" className="right" style={{ marginRight: "30px" }}>
-              {"< >"} hugary.dev
+              {"</>"} hugary.dev
             </Link>
           }
           fixed

@@ -23,7 +23,7 @@ class AppFooter extends Component {
   render() {
     return (
       <Footer
-        copyrights="&copy; Tianchen (Gary) Hu All Rights Reserved"
+        copyrights="&copy; 2019 Tianchen (Gary) Hu All Rights Reserved"
         className="blue darken-4"
         style={{ minHeight: "1em", marginTop: "2em" }}
       >
