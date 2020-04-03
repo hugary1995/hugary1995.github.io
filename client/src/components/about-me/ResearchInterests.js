@@ -67,10 +67,3 @@ class ResearchInterests extends Component {
 }
 
 export default ResearchInterests;
-
-// <li>Building and evaluating micro-scale finite element models</li>
-// <li>Improving building-energy efficiency based on computer simulation</li>
-// <li>Topology optimization</li>
-// <li>Modal analysis and study of interfacial contact dynamics of nonlinear joints</li>
-// <li>Cloud (cluster) computing and parallel computing</li>
-// <li>Module-based web/desktop/mobile application development</li>

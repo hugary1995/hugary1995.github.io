@@ -3,9 +3,19 @@ import React, { Component } from "react";
 class Skills extends Component {
   render() {
     return (
-      <>
-        <p>Skills</p>
-      </>
+      <div className="container">
+        <div className="center flow-text">
+          <img
+            src="under-construction.gif"
+            style={{
+              width: "40%",
+              maxWidth: "200px"
+            }}
+            alt=""
+          />
+          <h5>under construction</h5>
+        </div>
+      </div>
     );
   }
 }
