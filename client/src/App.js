@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+import {setCurrentUser, logoutUser} from "./actions/authActions";
 
-import { Provider } from "react-redux";
+import {Provider} from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
@@ -17,8 +17,6 @@ import JournalClub from "./components/apps/journal-club/JournalClub";
 import AddJournal from "./components/apps/journal-club/AddJournal";
 
 import AboutMe from "./components/about-me/AboutMe";
-import Skills from "./components/skills/Skills";
-import ProfDevel from "./components/prof-devel/ProfDevel";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -41,7 +39,7 @@ if (localStorage.jwtToken) {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { height: 0 };
+    this.state = {height: 0};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
@@ -55,19 +53,17 @@ class App extends Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ height: window.innerHeight });
+    this.setState({height: window.innerHeight});
   }
 
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="App" style={{ minHeight: this.state.height }}>
+          <div className="App" style={{minHeight: this.state.height}}>
             <Navbar />
             <Route exact path="/" component={Landing} />
             <Route exact path="/aboutme" component={AboutMe} />
-            <Route exact path="/skills" component={Skills} />
-            <Route exact path="/profdevel" component={ProfDevel} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/journalclub" component={JournalClub} />

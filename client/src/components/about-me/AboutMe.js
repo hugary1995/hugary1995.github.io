@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { MediaBox } from "react-materialize";
+import React, {Component} from "react";
 import Education from "./Education";
 import ResearchInterests from "./ResearchInterests";
+import Publications from "./Publications";
+import Conferences from "./Conferences";
 
 class AboutMe extends Component {
   render() {
@@ -14,19 +15,19 @@ class AboutMe extends Component {
             textAlign: "justify"
           }}
         >
-          <MediaBox>
-            <img
-              src="headshot.jpg"
-              style={{
-                width: "40%",
-                maxWidth: "200px",
-                float: "left",
-                paddingRight: "15px",
-                paddingTop: "10px"
-              }}
-              alt=""
-            />
-          </MediaBox>
+          <img
+            className="z-depth-1"
+            src="headshot.jpg"
+            style={{
+              width: "40%",
+              maxWidth: "200px",
+              float: "left",
+              marginRight: "15px",
+              marginTop: "5px",
+              borderRadius: "15px"
+            }}
+            alt=""
+          />
           <p>
             My name is Tianchen (Gary) Hu, and this is my personal website. This
             website mainly serves as my online curriculum vitae, so you can
@@ -45,8 +46,10 @@ class AboutMe extends Component {
             stack.
           </p>
         </div>
-        <Education />
         <ResearchInterests />
+        <Education />
+        <Publications />
+        <Conferences />
       </div>
     );
   }

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link, withRouter, matchPath } from "react-router-dom";
+import React, {Component} from "react";
+import {Link, withRouter, matchPath} from "react-router-dom";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { loginUser, logoutUser } from "../../actions/authActions";
+import {connect} from "react-redux";
+import {loginUser, logoutUser} from "../../actions/authActions";
 import {
   Navbar as MatNavbar,
   NavItem,
@@ -59,21 +59,13 @@ class Navbar extends Component {
         <li>
           <img
             src="header.jpeg"
-            style={{ maxWidth: "100%", display: "inline-block" }}
+            style={{maxWidth: "100%", display: "inline-block"}}
             alt=""
           />
         </li>
         <SideNavItem href="/aboutme">
           ABOUT ME
           <Icon left>perm_identity</Icon>
-        </SideNavItem>
-        <SideNavItem href="/skills">
-          SKILLS
-          <Icon left>build</Icon>
-        </SideNavItem>
-        <SideNavItem href="/profdevel">
-          PROF. DEVEL.
-          <Icon left>work</Icon>
         </SideNavItem>
         <SideNavItem href="/">
           APP GALLERY
@@ -88,7 +80,7 @@ class Navbar extends Component {
       <div>
         <MatNavbar
           brand={
-            <Link to="/" className="right" style={{ marginRight: "30px" }}>
+            <Link to="/" className="right" style={{marginRight: "30px"}}>
               {"</>"} hugary.dev
             </Link>
           }
@@ -107,14 +99,6 @@ class Navbar extends Component {
             ABOUT ME
             <Icon left>perm_identity</Icon>
           </NavItem>
-          <NavItem href="/skills">
-            SKILLS
-            <Icon left>build</Icon>
-          </NavItem>
-          <NavItem href="/profdevel">
-            PROFESSIONAL DEVELOPMENT
-            <Icon left>work</Icon>
-          </NavItem>
           <NavItem href="/">
             APP GALLERY
             <Icon left>casino</Icon>
@@ -122,7 +106,7 @@ class Navbar extends Component {
         </MatNavbar>
         <div
           className="col s12 right-align flow-text"
-          style={{ paddingBottom: "10px", paddingTop: "10px" }}
+          style={{paddingBottom: "10px", paddingTop: "10px"}}
         >
           <Greeting
             location={this.props.location}
@@ -143,7 +127,6 @@ Navbar.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
-export default connect(
-  mapStateToProps,
-  { loginUser, logoutUser }
-)(withRouter(Navbar));
+export default connect(mapStateToProps, {loginUser, logoutUser})(
+  withRouter(Navbar)
+);

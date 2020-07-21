@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Chip } from "react-materialize";
+import React, {Component} from "react";
+import {Chip} from "react-materialize";
 
 const research_interests = {
   "Finite Element Method":
@@ -26,19 +26,22 @@ class ResearchInterests extends Component {
   constructor(props) {
     super(props);
     this.onChipSelect = this.onChipSelect.bind(this);
-    this.state = { currentInterest: "Finite Element Method" };
+    this.state = {currentInterest: "Finite Element Method"};
   }
 
   onChipSelect(e) {
     let title = e.currentTarget.textContent;
     if (this.state.currentInterest !== title)
-      this.setState({ currentInterest: title });
+      this.setState({currentInterest: title});
   }
 
   render() {
     return (
       <div>
-        <blockquote>
+        <blockquote
+          className="z-depth-1"
+          style={{paddingTop: "1px", paddingBottom: "1px"}}
+        >
           <h5>Research Interests</h5>
         </blockquote>
         <p>{research_interests[this.state.currentInterest]}</p>
@@ -55,7 +58,7 @@ class ResearchInterests extends Component {
                 key={i}
                 className="hoverable"
                 onClick={this.onChipSelect}
-                style={{ cursor: "pointer" }}
+                style={{cursor: "pointer"}}
               >
                 {title}
               </Chip>

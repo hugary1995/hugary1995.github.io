@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 
 class ExternalCard extends Component {
@@ -10,6 +10,8 @@ class ExternalCard extends Component {
           <p>{this.props.description}</p>
           <a
             href={this.props.to}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-floating btn-large halfway-fab right waves-effect waves-light blue"
           >
             <i className="material-icons">arrow_forward</i>
