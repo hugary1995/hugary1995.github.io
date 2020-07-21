@@ -58,7 +58,8 @@ class Education extends Component {
             imgsrc="duke.png"
             imglink="https://www.duke.edu/"
             name="Pratt School of Engineering, Duke University"
-            degree="Ph.D in Computation Mechanics, Advisor: John E. Dolbow"
+            degree="Ph.D. in Computational Mechanics, Advisor: John E. Dolbow"
+            secondDegree="Idaho National Laboratory Graduate Fellowship"
             year="2017 - 2022"
             transcript={
               <Transcript
