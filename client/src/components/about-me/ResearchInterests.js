@@ -40,9 +40,9 @@ class ResearchInterests extends Component {
       <div>
         <blockquote
           className="z-depth-1"
-          style={{paddingTop: "1px", paddingBottom: "1px"}}
+          style={{fontSize: "24px", paddingTop: "1px", paddingBottom: "1px"}}
         >
-          <h5>Research Interests</h5>
+          Research Interests
         </blockquote>
         <p>{research_interests[this.state.currentInterest]}</p>
         {Object.keys(research_interests).map((title, i) => {

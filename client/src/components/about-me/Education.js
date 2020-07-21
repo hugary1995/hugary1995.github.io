@@ -29,7 +29,10 @@ function School(props) {
         <img src={props.imgsrc} alt="" className="circle" />
       </a>
       <div style={{marginRight: "5em"}}>
-        <b>{props.name}</b>
+        <p style={{fontSize: "16px"}}>
+          <b>{props.university}</b>
+        </p>
+        <p>{props.school}</p>
         <p>{props.degree}</p>
         <p>{props.secondDegree}</p>
       </div>
@@ -49,15 +52,16 @@ class Education extends Component {
       <div>
         <blockquote
           className="z-depth-1"
-          style={{paddingTop: "1px", paddingBottom: "1px"}}
+          style={{fontSize: "24px", paddingTop: "1px", paddingBottom: "1px"}}
         >
-          <h5>Education</h5>
+          Education
         </blockquote>
         <Collection>
           <School
             imgsrc="duke.png"
             imglink="https://www.duke.edu/"
-            name="Pratt School of Engineering, Duke University"
+            university="Duke University"
+            school="Pratt School of Engineering"
             degree="Ph.D. in Computational Mechanics, Advisor: John E. Dolbow"
             secondDegree="Idaho National Laboratory Graduate Fellowship"
             year="2017 - 2022"
@@ -71,7 +75,8 @@ class Education extends Component {
           <School
             imgsrc="wustl.png"
             imglink="https://www.wustl.edu/"
-            name="Mckelvey School of Engineering, Washington University in Saint Louis"
+            university="Washington University in Saint Louis"
+            school="Mckelvey School of Engineering"
             degree="B.S. in Mechanical Engineering, Advisor: Philip V. Bayly"
             secondDegree="Second Major in Computer Science, Advisor: Ron K. Cytron"
             year="2015 - 2017"
@@ -85,7 +90,8 @@ class Education extends Component {
           <School
             imgsrc="cwru.png"
             imglink="https://www.cwru.edu/"
-            name="Case Institute of Technology, Case Western Reserve University"
+            university="Case Western Reserve University"
+            school="Case Institute of Technology"
             degree="Mechanical and Aerospace Engineering, Advisor: Alexis R. Abramson"
             year="2013 - 2015"
             transcript={
@@ -97,7 +103,7 @@ class Education extends Component {
           />
           <School
             imgsrc="nfls.jpg"
-            name="Nanjing Foreign Language School"
+            university="Nanjing Foreign Language School"
             degree="High School Diploma"
             year="2010 - 2013"
           />

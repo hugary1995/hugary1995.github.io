@@ -7,9 +7,9 @@ class Conferences extends Component {
       <div>
         <blockquote
           className="z-depth-1"
-          style={{paddingTop: "1px", paddingBottom: "1px"}}
+          style={{fontSize: "24px", paddingTop: "1px", paddingBottom: "1px"}}
         >
-          <h5>Conferences</h5>
+          Conferences
         </blockquote>
         <Collection>
           <CollectionItem style={{minHeight: "1em"}}>

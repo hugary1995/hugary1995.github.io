@@ -7,9 +7,9 @@ class Publications extends Component {
       <div>
         <blockquote
           className="z-depth-1"
-          style={{paddingTop: "1px", paddingBottom: "1px"}}
+          style={{fontSize: "24px", paddingTop: "1px", paddingBottom: "1px"}}
         >
-          <h5>Publications</h5>
+          Publications
         </blockquote>
         <Collection>
           <CollectionItem style={{minHeight: "1em"}}>
