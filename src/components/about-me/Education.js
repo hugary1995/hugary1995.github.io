@@ -64,7 +64,7 @@ class Education extends Component {
             school="Pratt School of Engineering"
             degree="Ph.D. in Computational Mechanics, Advisor: John E. Dolbow"
             secondDegree="Idaho National Laboratory Graduate Fellowship"
-            year="2017 - 2022"
+            year="2017 - 2021"
             transcript={
               <Transcript
                 name="Transcript - Duke University"

@@ -30,8 +30,8 @@ class App extends Component {
       <Router>
         <div className="App" style={{minHeight: this.state.height}}>
           <Navbar />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/aboutme" component={AboutMe} />
+          <Route exact path="/" component={AboutMe} />
+          <Route exact path="/apps" component={Landing} />
         </div>
       </Router>
     );

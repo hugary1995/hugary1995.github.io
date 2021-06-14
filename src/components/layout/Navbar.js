@@ -51,11 +51,11 @@ class Navbar extends Component {
           }
           sidenav={this.customSideNav()}
         >
-          <NavItem href="/aboutme">
+          <NavItem href="/">
             ABOUT ME
             <Icon left>perm_identity</Icon>
           </NavItem>
-          <NavItem href="/">
+          <NavItem href="/apps">
             APP GALLERY
             <Icon left>casino</Icon>
           </NavItem>
