@@ -34,16 +34,12 @@ class AboutMe extends Component {
             learn most of (the good things about) me here.
           </p>
           <p>
-            I hold degrees in both Mechanical Engineering and Computer Science,
-            so my expertise largely resides in the intersection of the two
-            fields, including algorithm, data structures, and numerical methods.
-          </p>
-          <p>
-            Recently, I become interested in the full-stack view of techniques.
-            Hence, I am learning basics of front-end, back-end, database, and
-            ways to connect these pieces togather. I built this non-static site
-            to test my knowledge about the MERN (Mongo-Express-React-Node)
-            stack.
+            I earned my B.S. degree in Mechanical Engineering from Washington
+            University in Saint Louis. I joined the Department of Mechanical
+            Engineering and Materials Science at Duke University in 2017 as a
+            graduate research assistant. I received my Ph.D. degree in 2021. I
+            will be working as a postdoctoral fellow at the Idaho National
+            Laborotary.
           </p>
         </div>
         <ResearchInterests />

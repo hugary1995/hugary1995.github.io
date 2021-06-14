@@ -19,11 +19,11 @@ class Navbar extends Component {
             alt=""
           />
         </li>
-        <SideNavItem href="/aboutme">
+        <SideNavItem href="/">
           ABOUT ME
           <Icon left>perm_identity</Icon>
         </SideNavItem>
-        <SideNavItem href="/">
+        <SideNavItem href="/apps">
           APP GALLERY
           <Icon left>casino</Icon>
         </SideNavItem>
@@ -36,12 +36,12 @@ class Navbar extends Component {
       <div>
         <MatNavbar
           brand={
-            <Link to="/" className="right" style={{marginRight: "30px"}}>
+            <Link to="/" style={{marginLeft: "30px"}}>
               Gary Hu
             </Link>
           }
           fixed
-          alignLinks="left"
+          alignLinks="right"
           className="blue darken-4"
           menuIcon={
             <div>
