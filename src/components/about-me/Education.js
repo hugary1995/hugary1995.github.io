@@ -1,5 +1,11 @@
-import React, {Component} from "react";
-import {Collection, CollectionItem, Modal} from "react-materialize";
+import React, {
+  Component
+} from "react";
+import {
+  Collection,
+  CollectionItem,
+  Modal
+} from "react-materialize";
 import CourseworkDuke from "./coursework/CourseworkDuke";
 import CourseworkWUSTL from "./coursework/CourseworkWUSTL";
 import CourseworkCWRU from "./coursework/CourseworkCWRU";
@@ -15,7 +21,7 @@ function Transcript(props) {
           transcript
         </p>
       }
-      header={<h5>{props.name}</h5>}
+      header={props.name}
     >
       {props.coursework}
     </Modal>
