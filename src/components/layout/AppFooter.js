@@ -3,7 +3,7 @@ import {Footer} from "react-materialize";
 
 function Contact(props) {
   return (
-    <>
+    <div>
       <div className="col s4 right-align">{props.name}:</div>
       <div className="col s8">
         <a
@@ -15,7 +15,7 @@ function Contact(props) {
           {props.content}
         </a>
       </div>
-    </>
+    </div>
   );
 }
 
