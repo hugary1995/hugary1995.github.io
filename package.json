@@ -16,12 +16,13 @@
     "react-scripts": "^1.1.5",
     "react-truncate": "^2.4.0",
     "react-visibility-sensor": "^5.1.1",
+    "seedrandom": "^3.0.5",
     "styled-components": "^5.3.0"
   },
   "scripts": {
     "prestart": "node registerPhotos.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node registerPhotos.js && react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",
     "deploy": "rm -rf node_modules/.cache/gh-pages && gh-pages -b gh-pages -d build",
