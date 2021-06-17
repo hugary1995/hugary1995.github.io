@@ -1,57 +1,24 @@
 import React, { Component } from "react";
 import Gallery from "react-photo-gallery";
 import { photos } from "./photos.js";
-import { Modal, Button } from "react-materialize";
+import { MediaBox } from "react-materialize";
 
 class PhotoGallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentImage: 0,
-      viewerIsOpen: false,
-    };
-  }
-
-  openLightbox = (event, { photo, index }) => {
-    this.setState({ currentImage: index, viewerIsOpen: true });
-  };
-
-  closeLightbox = () => {
-    this.setState({ viewerIsOpen: false });
+  mediaBoxRenderer = ({ photo }) => {
+    return (
+      <MediaBox>
+        <img
+          alt=""
+          src={photo.src}
+          width={photo.width}
+          style={{ margin: "2px" }}
+        />
+      </MediaBox>
+    );
   };
 
   render() {
-    return (
-      <div>
-        <Gallery photos={photos} onClick={this.openLightbox} />
-        <Modal
-          id="modal"
-          actions={[
-            <Button
-              flat
-              modal="close"
-              node="button"
-              waves="green"
-              onClick={this.closeLightbox}
-            >
-              Close
-            </Button>,
-          ]}
-          fixedFooter
-          open={this.state.viewerIsOpen}
-          options={{
-            dismissible: false,
-            preventScrolling: true,
-          }}
-        >
-          <img
-            alt=""
-            src={photos[this.state.currentImage].src}
-            style={{ maxWidth: "100%", margin: "auto" }}
-          />
-        </Modal>
-      </div>
-    );
+    return <Gallery photos={photos} renderImage={this.mediaBoxRenderer} />;
   }
 }
 
