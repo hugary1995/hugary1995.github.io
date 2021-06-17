@@ -25,6 +25,7 @@ class PhotoGallery extends Component {
       <div>
         <Gallery photos={photos} onClick={this.openLightbox} />
         <Modal
+          id="modal"
           actions={[
             <Button
               flat
@@ -36,6 +37,7 @@ class PhotoGallery extends Component {
               Close
             </Button>,
           ]}
+          fixedFooter
           open={this.state.viewerIsOpen}
           options={{
             dismissible: false,
@@ -45,7 +47,7 @@ class PhotoGallery extends Component {
           <img
             alt=""
             src={photos[this.state.currentImage].src}
-            style={{ maxWidth: "100%" }}
+            style={{ maxWidth: "100%", margin: "auto" }}
           />
         </Modal>
       </div>
