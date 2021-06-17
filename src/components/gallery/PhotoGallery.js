@@ -17,7 +17,7 @@ class PhotoGallery extends Component {
   };
 
   closeLightbox = () => {
-    this.setState({ currentImage: 0, viewerIsOpen: false });
+    this.setState({ viewerIsOpen: false });
   };
 
   render() {
