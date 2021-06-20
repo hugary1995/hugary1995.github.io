@@ -13,7 +13,7 @@ class Navbar extends Component {
       <div>
         <li>
           <img
-            src="header.jpeg"
+            src="/header.jpeg"
             style={{
               maxWidth: "100%",
               display: "inline-block",
