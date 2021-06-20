@@ -7,7 +7,7 @@ class PhotoGallery extends Component {
   mediaBoxRenderer = ({ photo }) => {
     return (
       <MediaBox key={photo.src}>
-        <img alt="" {...photo} style={{ margin: "2px" }} />
+        <img alt="" {...photo} />
       </MediaBox>
     );
   };

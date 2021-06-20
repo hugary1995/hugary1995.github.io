@@ -60,45 +60,6 @@ for (const file of files) {
   stream.write("src: '" + dir_4x + "/" + file + "',\n");
 
   stream.write("srcSet: [\n");
-  // 3x
-  sharp(srcdir_4x + "/" + file)
-    .resize(
-      Math.ceil(dimensions.width * 0.75),
-      Math.ceil(dimensions.height * 0.75)
-    )
-    .toFile(srcdir_3x + "/" + file, (err, info) => {
-      if (err) console.log(err);
-      console.log("registered image (3x) " + file);
-    });
-  stream.write(
-    "'" +
-      dir_3x +
-      "/" +
-      file +
-      " " +
-      Math.ceil(dimensions.width * 0.75) +
-      "w',\n"
-  );
-
-  // 2x
-  sharp(srcdir_4x + "/" + file)
-    .resize(
-      Math.ceil(dimensions.width * 0.5),
-      Math.ceil(dimensions.height * 0.5)
-    )
-    .toFile(srcdir_2x + "/" + file, (err, info) => {
-      if (err) console.log(err);
-      console.log("registered image (2x) " + file);
-    });
-  stream.write(
-    "'" +
-      dir_2x +
-      "/" +
-      file +
-      " " +
-      Math.ceil(dimensions.width * 0.5) +
-      "w',\n"
-  );
 
   // 1x
   sharp(srcdir_4x + "/" + file)
@@ -110,6 +71,30 @@ for (const file of files) {
       if (err) console.log(err);
       console.log("registered image (1x) " + file);
     });
+
+  // 2x
+  sharp(srcdir_4x + "/" + file)
+    .resize(
+      Math.ceil(dimensions.width * 0.5),
+      Math.ceil(dimensions.height * 0.5)
+    )
+    .toFile(srcdir_2x + "/" + file, (err, info) => {
+      if (err) console.log(err);
+      console.log("registered image (2x) " + file);
+    });
+
+  // 3x
+  sharp(srcdir_4x + "/" + file)
+    .resize(
+      Math.ceil(dimensions.width * 0.75),
+      Math.ceil(dimensions.height * 0.75)
+    )
+    .toFile(srcdir_3x + "/" + file, (err, info) => {
+      if (err) console.log(err);
+      console.log("registered image (3x) " + file);
+    });
+
+  // 1x
   stream.write(
     "'" +
       dir_1x +
@@ -119,10 +104,33 @@ for (const file of files) {
       Math.ceil(dimensions.width * 0.25) +
       "w',\n"
   );
+  // 2x
+  stream.write(
+    "'" +
+      dir_2x +
+      "/" +
+      file +
+      " " +
+      Math.ceil(dimensions.width * 0.5) +
+      "w',\n"
+  );
+  // 3x
+  stream.write(
+    "'" +
+      dir_3x +
+      "/" +
+      file +
+      " " +
+      Math.ceil(dimensions.width * 0.75) +
+      "w',\n"
+  );
+  // 4x
+  stream.write("'" + dir_4x + "/" + file + " " + dimensions.width + "w'\n");
+
   stream.write("],\n");
 
   stream.write(
-    "sizes: ['(min-width: 480px) 25vw,(min-width: 800px) 50vw,(min-width: 1200px) 75vw,100vw'],\n"
+    "sizes: ['(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw'],\n"
   );
 
   stream.write("width: " + dimensions.width + ",\n");
