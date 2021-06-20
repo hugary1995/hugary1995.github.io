@@ -6,13 +6,8 @@ import { MediaBox } from "react-materialize";
 class PhotoGallery extends Component {
   mediaBoxRenderer = ({ photo }) => {
     return (
-      <MediaBox>
-        <img
-          alt=""
-          src={photo.src}
-          width={photo.width}
-          style={{ margin: "2px" }}
-        />
+      <MediaBox key={photo.src}>
+        <img alt="" {...photo} style={{ margin: "2px" }} />
       </MediaBox>
     );
   };
