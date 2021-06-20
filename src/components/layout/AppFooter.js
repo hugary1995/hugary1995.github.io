@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Footer} from "react-materialize";
+import React, { Component } from "react";
+import { Footer } from "react-materialize";
 
 function Contact(props) {
   return (
@@ -19,13 +19,21 @@ function Contact(props) {
   );
 }
 
+function CurrentYear() {
+  return new Date().getFullYear();
+}
+
 class AppFooter extends Component {
   render() {
     return (
       <Footer
-        copyrights="&copy; 2020 Tianchen (Gary) Hu All Rights Reserved"
+        copyrights={
+          <div>
+            &copy; <CurrentYear /> Tianchen (Gary) Hu All Rights Reserved{" "}
+          </div>
+        }
         className="blue darken-4"
-        style={{minHeight: "1em", marginTop: "2em"}}
+        style={{ minHeight: "1em", marginTop: "2em" }}
       >
         <div className="row">
           <div className="col s4">
