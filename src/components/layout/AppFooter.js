@@ -19,19 +19,16 @@ function Contact(props) {
   );
 }
 
-function CurrentYear() {
-  return new Date().getFullYear();
+function copyright() {
+  const year = new Date().getFullYear();
+  return "\u00A9 " + year + " Tianchen (Gary) Hu All Rights Reserved";
 }
 
 class AppFooter extends Component {
   render() {
     return (
       <Footer
-        copyrights={
-          <div>
-            &copy; <CurrentYear /> Tianchen (Gary) Hu All Rights Reserved{" "}
-          </div>
-        }
+        copyrights={copyright()}
         className="blue darken-4"
         style={{ minHeight: "1em", marginTop: "2em" }}
       >
